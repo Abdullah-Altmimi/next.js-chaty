@@ -78,6 +78,11 @@ a {
   width: 100vw;
   height: 100vh;
 
+  @include onSmall {
+    height: 90vh;
+
+  }
+
   .sign-card {
     position: relative;
 
@@ -426,11 +431,11 @@ a {
   min-width: 300px;
   height: calc(100vh - 50px);
 
-  // @include onSmall {
-  //   & {
-  //     max-height: calc(100vh - 150px);
-  //   }
-  // }
+  @include onSmall {
+    & {
+      max-height: calc(100vh - 150px);
+    }
+  }
 
   min-height: 450px;
   border: 1px solid $gray;
