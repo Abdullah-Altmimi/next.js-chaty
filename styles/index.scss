@@ -423,6 +423,11 @@ a {
   width: calc(100vw - 50px);
   min-width: 300px;
   height: calc(100vh - 50px);
+
+  @include onSmall {
+    height: calc(100vh - 150px);
+  }
+
   min-height: 600px;
   border: 1px solid $gray;
   color: white;
