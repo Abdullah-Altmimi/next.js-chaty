@@ -1,7 +1,9 @@
 $white: #fff;
-$blue: #0077B6;
+$blue: #da4040;
+$dark-blue: #7d0b91;
+// $blue: #0077B6;
+// $dark-blue: #00171F;
 $gray: #777777;
-$dark-blue: #00171F;
 
 @mixin onSmall {
   @media (max-width: 650px) {
