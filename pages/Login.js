@@ -43,6 +43,7 @@ export default function Login() {
   }
   
   function login() {
+    setError("Loading");
     signInWithEmailAndPassword(auth, form.email, form.password).then(() => {
       setError(false);
     }).catch(err => {
