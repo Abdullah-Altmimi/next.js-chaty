@@ -1,8 +1,8 @@
 $white: #fff;
-$blue: #da4040;
-$dark-blue: #7d0b91;
-// $blue: #0077B6;
-// $dark-blue: #00171F;
+// $blue: #da4040;
+// $dark-blue: #7d0b91;
+$blue: #0077B6;
+$dark-blue: #00171F;
 $gray: #777777;
 
 @mixin onSmall {
@@ -433,7 +433,7 @@ a {
 
   @include onSmall {
     & {
-      max-height: calc(100vh - 150px);
+      max-height: calc(100vh - 50px);
     }
   }
 

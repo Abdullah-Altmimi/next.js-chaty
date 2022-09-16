@@ -19,8 +19,6 @@ export default function MainContent() {
   const { currentUser, searchUser } = useAuth();
   const { userChats, dispatch, chatId, addFriend, userInfo } = useChat();
 
-  console.log(userChats)
-
   const handleSearch = event => {
     if (username.length === 0) setResultUser([]);
     if (event?.code !== "Enter" && event?.code) return;
