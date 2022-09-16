@@ -335,6 +335,11 @@ a {
   justify-content: center;
   flex-direction: column;
   min-height: 100vh;
+
+  @include onSmall {
+    min-height: 90vh;
+  }
+
   min-width: 100vw;
   background: linear-gradient(45deg, #03045E, #0077B6);
   color: white;
@@ -433,7 +438,7 @@ a {
 
   @include onSmall {
     & {
-      max-height: calc(100vh - 70px);
+      max-height: calc(100vh - 110px);
       margin: auto;
     }
   }
@@ -964,6 +969,11 @@ a {
   display: flex;
   width: 100vw;
   height: 100vh;
+
+  @include onSmall {
+    height: 90vh;
+
+  }
 
   .reset-card {
     position: relative;
