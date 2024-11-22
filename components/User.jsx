@@ -1,6 +1,7 @@
 import { motion } from "framer-motion"
 import Image from "next/image"
 import { useChat } from "./ChatContext"
+import defaultUserIcon from "../public/images/user_photo.png"
 
 export default function User({ uid, username, profilePhotoURL, delay, combinedId, handleSelect, lastMessage, setIsNav }) {
   const { userInfo } = useChat();
@@ -25,8 +26,8 @@ export default function User({ uid, username, profilePhotoURL, delay, combinedId
       }}
       className={`user ${userInfo.uid === uid ? "selected" : ""}`}
     >
-      <div className="img-holder">
-        <Image src={profilePhotoURL} layout="fill" alt="profile photo" />
+      <div className="user-image">
+        <Image src={profilePhotoURL || defaultUserIcon} layout="fill" alt="profile photo" />
       </div>
       {lastMessage && <span>{lastMessage}</span>}
       <p>{username}</p>
