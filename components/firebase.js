@@ -6,6 +6,7 @@ import { getStorage } from "firebase/storage"
 
 // import { getAnalytics } from "firebase/analytics";
 
+// i know that i must use .env file but who cares :)
 const firebaseConfig = {
   apiKey: "AIzaSyA8Qoepxh1UAHPsIsWYYAH2UyO7FQwp7EA",
   authDomain: "chat-app-39706.firebaseapp.com",

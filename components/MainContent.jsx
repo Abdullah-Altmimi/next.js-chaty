@@ -15,7 +15,6 @@ export default function MainContent() {
   const [showProfile, setShowProfile] = useState(false);
   const [username, setUsername] = useState("");
   const [resultUser, setResultUser] = useState([]);
-  const [isNav, setIsNav] = useState(false);
   const { currentUser, searchUser } = useAuth();
   const { userChats, dispatch, chatId, addFriend, userInfo } = useChat();
 
@@ -43,7 +42,7 @@ export default function MainContent() {
 
   return (
     <div className='container'>
-      <div className={`left ${isNav ? "show" : 'hide'}`}>
+      <div className={`left`}>
 
         {/* profile trigger */}
         <Profile showProfile={showProfile} setShowProfile={setShowProfile} currentUser={currentUser} />
@@ -68,7 +67,7 @@ export default function MainContent() {
         <div className='users-holder'>
           {Object.entries(userChats).length >= 1 &&
             Object.entries(userChats).sort((a, b) => b[1].date - a[1].date).map((doc, index) =>
-              <User setIsNav={setIsNav} lastMessage={doc[1].userInfo.lastMessage} delay={index}
+              <User lastMessage={doc[1].userInfo.lastMessage} delay={index}
                 profilePhotoURL={doc[1].userInfo.profilePhotoURL} combinedId={doc[0]}
                 username={doc[1].userInfo.username} handleSelect={handleSelect} uid={doc[1].userInfo.uid}
                 key={doc[0]}
@@ -77,8 +76,8 @@ export default function MainContent() {
         </div>
       </div>
       <div className="right">
-        {!chatId && <InitialRight setIsNav={setIsNav} />}
-        {chatId && <ChatSection setIsNav={setIsNav} />}
+        {!chatId && <InitialRight />}
+        {chatId && <ChatSection />}
         {/* <ChatSection /> */}
       </div>
     </div>

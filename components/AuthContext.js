@@ -13,7 +13,7 @@ export function AuthProvider({ children }) {
     let unSub = () => "";
 
     const unsubscribe = auth.onAuthStateChanged(user => {
-      if (!user?.uid) return setCurrentUser(false);
+      if (!user) return setCurrentUser(false);
       const cancelListener = onSnapshot(doc(db, "users", user.uid), (res, err) => {
         setCurrentUser({user, data: res.data()})
         if (err) console.log(err);

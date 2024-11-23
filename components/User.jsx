@@ -3,14 +3,14 @@ import Image from "next/image"
 import { useChat } from "./ChatContext"
 import defaultUserIcon from "../public/images/user_photo.png"
 
-export default function User({ uid, username, profilePhotoURL, delay, combinedId, handleSelect, lastMessage, setIsNav }) {
+export default function User({ uid, username, profilePhotoURL, delay, combinedId, handleSelect, lastMessage }) {
   const { userInfo } = useChat();
 
   return (
     <motion.div
       layout
 
-      onClick={() => `${handleSelect(combinedId, profilePhotoURL, username, uid)} ${setIsNav(false)}`}
+      onClick={() => `${handleSelect(combinedId, profilePhotoURL, username, uid)}`}
       initial={{
         y: 150,
         opacity: 0,

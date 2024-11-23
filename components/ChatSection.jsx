@@ -7,7 +7,7 @@ import { useChat } from './ChatContext';
 import imageIcon from "../public/images/image_icon.png";
 import { storage } from "./firebase";
 
-export default function ChatSection({ setIsNav }) {
+export default function ChatSection() {
   const [text, setText] = useState("")
   const { userInfo, messages, chatId, addMessage, batchUpdate, resetChat, batchCommit, deleteFriend } = useChat()
   const { updateChatData, currentUser } = useAuth()
@@ -107,11 +107,6 @@ export default function ChatSection({ setIsNav }) {
       {isOptions && <div className="overlay" onClick={() => setIsOptions(false)} />}
       <div className='chat-container'>
         <header>
-          <div onClick={() => setIsNav(true)} className="burger-menu">
-            <span />
-            <span />
-            <span />
-          </div>
           <div className='userInfo'>
             <div className={`dots ${isOptions ? "active" : ""}`} onClick={() => setIsOptions(true)}>
               <span />
